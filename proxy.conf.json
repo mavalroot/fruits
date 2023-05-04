@@ -1,0 +1,9 @@
+{
+  "/api": {
+    "target": "https://fruityvice.com/api",
+    "pathRewrite": { "^/api": "" },
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

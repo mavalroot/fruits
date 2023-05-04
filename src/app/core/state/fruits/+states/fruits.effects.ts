@@ -1,0 +1,30 @@
+import { Injectable } from '@angular/core';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { FruitsService } from '../service/fruits.service';
+import * as FruitsActions from './fruits.actions';
+import { map, switchMap } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class FruitsEffects {
+  constructor(
+    private readonly actions$: Actions,
+    private readonly fruitsService: FruitsService
+  ) {}
+
+  readonly getBooksList = createEffect(() =>
+    this.actions$.pipe(
+      ofType(FruitsActions.getFruits),
+      switchMap(({ filter }) =>
+        this.fruitsService.getFruits(filter).pipe(
+          map((data) =>
+            FruitsActions.getFruitsSuccess({
+              data: data || [],
+            })
+          )
+        )
+      )
+    )
+  );
+}

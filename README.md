@@ -1,27 +1,48 @@
 # Fruits
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+This is a test project about fruits :apple:
 
-## Development server
+## Table of Contents
+* [Technologies Used](#technologies-used)
+* [Setup](#setup)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technologies Used
 
-## Code scaffolding
+Fruits is created with:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular (15.2.8)
+- Angular Material (15.2.8)
+- NgRx (15.4.0)
+- Tailwind (3.3.2)
+- Jest (29.5.0)
+- [Fruityvice API](https://fruityvice.com/)
 
-## Build
+## Setup
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Clone the repo
 
-## Running unit tests
+```shell
+git clone https://github.com/mavalroot/fruits.git
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Install npm packages
 
-## Running end-to-end tests
+Install the npm packages described in the package.json and verify that it works:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```shell
+npm install
+npm start
+```
 
-## Further help
+#### npm scripts
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+These are the most useful commands defined in `package.json`:
+
+* `npm start` - runs the TypeScript compiler, asset copier, and a server at the same time, all three in "watch mode".
+* `npm run build` - runs the TypeScript compiler and asset copier once.
+* `npm run watch` - runs the TypeScript compiler and asset copier in "watch mode"; when changes occur to source files, they will be recompiled or copied into `dist/`.
+
+These are the test-related scripts:
+
+* `npm run test` - runs Jest tests one time.
+* `npm run test:w` - runs Jest tests in watch and coverage mode.

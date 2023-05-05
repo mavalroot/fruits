@@ -3,10 +3,10 @@
 This is a test project about fruits :apple:
 
 ## Table of Contents
-* [Technologies Used](#technologies-used)
+* [Technologies](#technologies-used)
 * [Setup](#setup)
 
-## Technologies Used
+## Technologies
 
 Fruits is created with:
 
@@ -19,30 +19,28 @@ Fruits is created with:
 
 ## Setup
 
-### Clone the repo
+### Clone
+
+Clone the repository.
 
 ```shell
 git clone https://github.com/mavalroot/fruits.git
 ```
 
-### Install npm packages
+### Install
 
-Install the npm packages described in the package.json and verify that it works:
+Install the npm packages.
 
 ```shell
 npm install
-npm start
 ```
 
-#### npm scripts
+### Scripts
 
-These are the most useful commands defined in `package.json`:
+Useful scripts:
 
-* `npm start` - runs the TypeScript compiler, asset copier, and a server at the same time, all three in "watch mode".
-* `npm run build` - runs the TypeScript compiler and asset copier once.
-* `npm run watch` - runs the TypeScript compiler and asset copier in "watch mode"; when changes occur to source files, they will be recompiled or copied into `dist/`.
-
-These are the test-related scripts:
-
-* `npm run test` - runs Jest tests one time.
-* `npm run test:w` - runs Jest tests in watch and coverage mode.
+* `npm start` - serve the app in watch mode.
+* `npm run build` - compile the app.
+* `npm run watch` - compile in watch mode.
+* `npm run test` - run Jest tests one time.
+* `npm run test:w` - run Jest tests in watch and coverage mode.

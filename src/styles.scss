@@ -14,3 +14,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.no-margin .mat-form-field-wrapper {
+  margin-bottom: -1.25em !important;
+}

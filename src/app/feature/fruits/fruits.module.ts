@@ -8,6 +8,10 @@ import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ListComponent, FilterComponent, TableComponent],
@@ -17,6 +21,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatTableModule,
     MatPaginatorModule,
     MatIconModule,
+    MatInputModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    ReactiveFormsModule,
   ],
 })
 export class FruitsModule {}

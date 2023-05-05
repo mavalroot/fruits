@@ -17,7 +17,7 @@ export class TableComponent {
     data: Fruit[];
     pagination: FruitPagination;
   }>;
-  public displayedColumns = this.columns;
+  public displayedColumns = [...this.columns, 'action'];
 
   private savedFilter: FruitFilter | undefined;
 

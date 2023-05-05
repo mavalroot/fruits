@@ -7,6 +7,7 @@ import { FilterComponent } from './components/filter/filter.component';
 import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [ListComponent, FilterComponent, TableComponent],
@@ -15,6 +16,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     FruitsRoutingModule,
     MatTableModule,
     MatPaginatorModule,
+    MatIconModule,
   ],
 })
 export class FruitsModule {}

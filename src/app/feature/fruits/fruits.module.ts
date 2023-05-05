@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatButtonToggleModule,
     ReactiveFormsModule,
+    MatExpansionModule,
   ],
 })
 export class FruitsModule {}

@@ -1,35 +1,56 @@
-<form [formGroup]="form" (submit)="search()" #filterForm="ngForm">
-  <div>
-    <mat-button-toggle-group
-      name="searchOption"
-      aria-label="Search option"
-      formControlName="field"
-    >
-      <mat-button-toggle
-        *ngFor="let opt of searchOptions"
-        [value]="opt.value"
-        >{{ opt.label }}</mat-button-toggle
-      >
-    </mat-button-toggle-group>
-  </div>
+<mat-accordion>
+  <mat-expansion-panel [hideToggle]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h2 class="text-base font-extrabold text-purple-800">
+          Filter list
+        </h2>
+      </mat-panel-title>
+      <mat-panel-description class="justify-end">
+        <mat-icon>search</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
 
-  <div class="flex items-center">
-    <mat-form-field class="grow mr-2" subscriptSizing="dynamic">
-      <input matInput placeholder="Seach term" formControlName="value" />
-    </mat-form-field>
+    <form [formGroup]="form" (submit)="search()" #filterForm="ngForm">
+      <div>
+        <mat-button-toggle-group
+          name="searchOption"
+          aria-label="Search option"
+          formControlName="field"
+        >
+          <mat-button-toggle
+            *ngFor="let opt of searchOptions"
+            [value]="opt.value"
+            >{{ opt.label }}</mat-button-toggle
+          >
+        </mat-button-toggle-group>
+      </div>
 
-    <button mat-raised-button color="accent" *ngIf="isActive" (click)="clear()" class="mr-1">
-      Clear
-      <mat-icon>clear</mat-icon>
-    </button>
-    <button
-      mat-raised-button
-      color="primary"
-      [disabled]="form.invalid || form.pristine"
-      type="submit"
-    >
-      Filter
-      <mat-icon>search</mat-icon>
-    </button>
-  </div>
-</form>
+      <div class="flex items-center">
+        <mat-form-field class="grow mr-2" subscriptSizing="dynamic">
+          <input matInput placeholder="Seach term" formControlName="value" />
+        </mat-form-field>
+
+        <button
+          mat-raised-button
+          color="accent"
+          *ngIf="isActive"
+          (click)="clear()"
+          class="mr-1"
+        >
+          Clear
+          <mat-icon>clear</mat-icon>
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="form.invalid || form.pristine"
+          type="submit"
+        >
+          Filter
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-expansion-panel>
+</mat-accordion>

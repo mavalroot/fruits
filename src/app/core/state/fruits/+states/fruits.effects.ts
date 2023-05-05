@@ -16,13 +16,18 @@ export class FruitsEffects {
   readonly getBooksList = createEffect(() =>
     this.actions$.pipe(
       ofType(FruitsActions.getFruits),
-      switchMap(({ filter }) =>
+      switchMap(({ filter, pagination }) =>
         this.fruitsService.getFruits(filter).pipe(
-          map((data) =>
-            FruitsActions.getFruitsSuccess({
-              data: data || [],
-            })
-          )
+          map((data) => {
+            const paginationOpt = this.fruitsService.getPagination(
+              data,
+              pagination
+            );
+            return FruitsActions.getFruitsSuccess({
+              pagination: paginationOpt,
+              data: this.fruitsService.getPaginatedData(data, paginationOpt),
+            });
+          })
         )
       )
     )

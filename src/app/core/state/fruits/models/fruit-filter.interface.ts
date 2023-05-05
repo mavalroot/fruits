@@ -4,7 +4,7 @@ export interface FruitFilter {
 }
 
 export enum FruitSearchValuesEnum {
-  order,
-  family,
-  genus,
+  order = 'order',
+  family = 'family',
+  genus = 'genus',
 }

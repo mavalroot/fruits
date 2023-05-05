@@ -11,6 +11,8 @@ export class ListComponent {
   constructor(private readonly store: Store) {}
 
   ngOnInit(): void {
-    this.store.dispatch(FruitsActions.getFruits({}));
+    this.store.dispatch(
+      FruitsActions.getFruits({})
+    );
   }
 }

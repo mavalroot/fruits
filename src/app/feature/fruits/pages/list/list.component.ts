@@ -5,7 +5,6 @@ import { Store } from '@ngrx/store';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
   constructor(private readonly store: Store) {}

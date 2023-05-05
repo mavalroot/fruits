@@ -7,7 +7,6 @@ import { Store } from '@ngrx/store';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent {
   @ViewChild('filterForm', { static: true }) filterForm!: NgForm;

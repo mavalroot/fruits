@@ -9,7 +9,6 @@ import { Observable, tap } from 'rxjs';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss'],
 })
 export class TableComponent {
   public columns = ['name', 'genus', 'family', 'order'];

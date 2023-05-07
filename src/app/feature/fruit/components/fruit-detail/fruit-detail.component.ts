@@ -6,6 +6,7 @@ import { objectToDisplayData } from '@app/core/utils/object.utils';
 @Component({
   selector: 'app-fruit-detail',
   templateUrl: './fruit-detail.component.html',
+  styleUrls: ['./fruit-detail.component.scss']
 })
 export class FruitDetailComponent {
   @Input() set detail(value: FruitDetail | undefined) {

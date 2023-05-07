@@ -7,6 +7,7 @@ import { DetailComponent } from './pages/detail/detail.component';
 import { MatButtonModule } from '@angular/material/button';
 import { FruitNotFoundComponent } from './components/fruit-not-found/fruit-not-found.component';
 import { FruitDetailComponent } from './components/fruit-detail/fruit-detail.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FruitDetailComponent } from './components/fruit-detail/fruit-detail.com
     CommonModule,
     FruitRoutingModule,
     MatButtonModule,
+    MatExpansionModule
   ]
 })
 export class FruitModule { }

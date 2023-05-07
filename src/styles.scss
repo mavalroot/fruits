@@ -13,6 +13,8 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: url('/assets/images/bg.jpg');
+  background-size: 500px;
 }
 
 .no-margin .mat-form-field-wrapper {

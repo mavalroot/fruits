@@ -10,7 +10,5 @@ export const selectDetail = createSelector(
 
 export const selectFruitPageViewModel = createSelector(
   selectDetail,
-  (detail) => {
-    detail;
-  }
+  (detail) => ({ detail })
 );

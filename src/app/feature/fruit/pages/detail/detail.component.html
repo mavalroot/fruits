@@ -1,1 +1,5 @@
-<p>detail works!</p>
+<ng-container *ngIf="model$ | async as model">
+  <div *ngIf="model.detail as detail">
+    {{ detail.name }}
+  </div>
+</ng-container>

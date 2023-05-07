@@ -10,6 +10,6 @@ export class FruitService {
   constructor(private readonly httpClient: HttpClient) {}
 
   public getDetail(name: string): Observable<FruitDetail> {
-    return this.httpClient.get<FruitDetail>(`/fruit/${name}`);
+    return this.httpClient.get<FruitDetail>(`/api/fruit/${name.toLowerCase()}`);
   }
 }

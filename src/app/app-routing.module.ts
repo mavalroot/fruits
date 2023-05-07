@@ -21,6 +21,11 @@ const routes: Routes = [
         (module) => module.FruitModule
       ),
   },
+  {
+    path: '**',
+    redirectTo: 'fruits',
+    pathMatch: 'full',
+  }
 ];
 
 @NgModule({

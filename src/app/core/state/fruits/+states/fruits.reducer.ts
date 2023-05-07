@@ -3,7 +3,7 @@ import { createFeature, createReducer, on } from '@ngrx/store';
 import * as FruitsActions from './fruits.actions';
 import { Fruit } from '@core/models/fruit.interface';
 import { FruitFilter } from '../models/fruit-filter.interface';
-import { FruitPagination } from '../models/fruit-pagination.interface';
+import { FruitPagination, PAGE_SIZE_OPTIONS } from '../models/fruit-pagination.interface';
 
 export interface FruitsState {
   readonly data: Fruit[];
@@ -18,7 +18,7 @@ const initialState: FruitsState = {
     length: 0,
     page: 0,
     size: 0,
-    pageSizeOptions: [0],
+    pageSizeOptions: PAGE_SIZE_OPTIONS,
   },
 };
 
@@ -35,6 +35,11 @@ export const fruitsFeature = createFeature({
       ...state,
       data: data,
       pagination,
+    })),
+    on(FruitsActions.getFruitsFailure, (state) => ({
+      ...state,
+      data: initialState.data,
+      pagination: initialState.pagination
     }))
   ),
 });

@@ -10,6 +10,7 @@ import { FruitDetailComponent } from './components/fruit-detail/fruit-detail.com
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
 import { NutritionsDataComponent } from './components/nutritions-data/nutritions-data.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NutritionsDataComponent } from './components/nutritions-data/nutritions
     MatButtonModule,
     MatExpansionModule,
     MatCardModule,
+    MatIconModule
   ],
 })
 export class FruitModule {}

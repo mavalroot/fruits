@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Fruit } from '@app/core/models';
+import { Fruit, FruitDetail } from '@app/core/models';
 import { FruitActions, FruitSelectors } from '@app/core/state/fruit';
 import { FruitError } from '@app/core/state/fruit/models/fruit-error.interface';
 import { Store } from '@ngrx/store';
@@ -17,6 +17,8 @@ export class DetailComponent {
   }>;
 
   public fruitName: string = '';
+
+  public detailCommonFields: (keyof FruitDetail)[] = ['name', 'family', 'genus', 'order']
 
   constructor(
     private readonly store: Store,

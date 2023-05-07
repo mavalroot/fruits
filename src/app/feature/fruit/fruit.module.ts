@@ -9,6 +9,7 @@ import { FruitNotFoundComponent } from './components/fruit-not-found/fruit-not-f
 import { FruitDetailComponent } from './components/fruit-detail/fruit-detail.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
+import { NutritionsDataComponent } from './components/nutritions-data/nutritions-data.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
     DetailComponent,
     FruitNotFoundComponent,
     FruitDetailComponent,
+    NutritionsDataComponent,
   ],
   imports: [
     CommonModule,

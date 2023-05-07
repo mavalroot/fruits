@@ -1,0 +1,35 @@
+<mat-expansion-panel [hideToggle]="true" class="mt-4" *ngIf="data">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <h2 class="text-lg primary-color font-semibold">
+        Nutritions
+        <span class="font-normal text-base">(in 100 gr)</span>
+      </h2>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="table-row">
+    <div class="nutrition-label primary-color">Calories</div>
+    <div class="nutrition-value">{{ data.calories }}</div>
+  </div>
+
+  <div class="table-row">
+    <div class="nutrition-label primary-color">Carbohydrates</div>
+    <div class="nutrition-value">{{ data.carbohydrates }} gr</div>
+  </div>
+
+  <div class="table-row">
+    <div class="nutrition-label primary-color">Fat</div>
+    <div class="nutrition-value">{{ data.fat }} gr</div>
+  </div>
+
+  <div class="table-row">
+    <div class="nutrition-label primary-color">Protein</div>
+    <div class="nutrition-value">{{ data.protein }} gr</div>
+  </div>
+
+  <div class="table-row">
+    <div class="nutrition-label primary-color">Sugar</div>
+    <div class="nutrition-value">{{ data.sugar }} gr</div>
+  </div>
+</mat-expansion-panel>

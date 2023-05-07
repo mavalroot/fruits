@@ -13,7 +13,7 @@ export class FruitsEffects {
     private readonly fruitsService: FruitsService
   ) {}
 
-  readonly getBooksList = createEffect(() =>
+  readonly getFruitsList = createEffect(() =>
     this.actions$.pipe(
       ofType(FruitsActions.getFruits),
       switchMap(({ filter, pagination }) =>

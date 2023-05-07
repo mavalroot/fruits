@@ -1,8 +1,11 @@
-
-
 <ng-container *ngIf="model$ | async as model">
-  <h2 class="mb-2 mt-0 text-lg font-extrabold primary-color">Fruits list ({{model.pagination.length}})</h2>
+  <div class="flex mb-2 justify-between items-center flex-wrap">
+    <h2 class="text-lg font-extrabold primary-color">
+      Fruits list ({{ model.pagination.length }})
+    </h2>
 
+    <a mat-raised-button color="primary" routerLink="/fruit/add">Add fruit</a>
+  </div>
 
   <table mat-table [dataSource]="model.data" class="mat-elevation-z8">
     <ng-container *ngFor="let column of columns">
@@ -17,7 +20,12 @@
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
-        <mat-icon color="primary" class="cursor-pointer" (click)="goToDetail(element)">visibility</mat-icon>
+        <mat-icon
+          color="primary"
+          class="cursor-pointer"
+          (click)="goToDetail(element)"
+          >visibility</mat-icon
+        >
       </td>
     </ng-container>
 

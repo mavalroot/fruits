@@ -47,6 +47,8 @@ export class TableComponent {
   }
 
   public goToDetail(element: Fruit) {
-    this.router.navigate([`/fruit/${element.name}`]);
+    if (element.name) {
+      this.router.navigate([`/fruit/${element.name.toLowerCase()}`]);
+    }
   }
 }

@@ -1,13 +1,13 @@
 
 
 <ng-container *ngIf="model$ | async as model">
-  <h2 class="mb-2 mt-0 text-lg font-extrabold text-purple-800">Fruits list ({{model.pagination.length}})</h2>
+  <h2 class="mb-2 mt-0 text-lg font-extrabold primary-color">Fruits list ({{model.pagination.length}})</h2>
 
 
   <table mat-table [dataSource]="model.data" class="mat-elevation-z8">
     <ng-container *ngFor="let column of columns">
       <ng-container [matColumnDef]="column">
-        <th mat-header-cell *matHeaderCellDef class="text-purple-800 font-bold">
+        <th mat-header-cell *matHeaderCellDef class="primary-color font-bold">
           {{ column | titlecase }}
         </th>
         <td mat-cell *matCellDef="let row">{{ row[column] }}</td>

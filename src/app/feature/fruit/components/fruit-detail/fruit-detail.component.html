@@ -1,43 +1,49 @@
-<h1 class="mb-2 mt-0 text-4xl font-extrabold text-purple-800 text-center">
+<h1 class="mb-2 mt-0 text-4xl font-extrabold primary-color text-center">
   {{ detail?.name }}
 </h1>
 
-<img
-  src="https://picsum.photos/500/250.jpg"
-  alt="Example image"
-  class="block m-auto max-w-full"
-/>
+<mat-card>
+  <mat-card-content>
+    <div class="flex flex-wrap">
+      <img
+        src="https://picsum.photos/400/500.jpg"
+        alt="Example image"
+        class="block m-auto max-w-full shrink-0 mr-5"
+      />
 
-<table class="w-full mt-2 bg-white">
-  <ng-container *ngFor="let data of mainData">
-    <tr *ngIf="data.children as children; else singleValue">
-      <td colspan="2">
-        <mat-expansion-panel [hideToggle]="true">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <h2 class="text-lg text-purple-800 font-semibold">
-                {{ data.label | titlecase }}
-              </h2>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
+      <div class="grow">
+        <ng-container *ngFor="let data of mainData">
+          <ng-container *ngIf="data.children as children; else singleValue">
+            <mat-expansion-panel [hideToggle]="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h2 class="text-lg primary-color font-semibold">
+                    {{ data.label | titlecase }}
+                  </h2>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
 
-          <div *ngFor="let child of children" class="table-row">
-            <div class="table-cell p-2 text-base text-purple-800">
-              {{ child.label | titlecase }}
+              <div *ngFor="let child of children" class="table-row">
+                <div class="table-cell p-2 text-base primary-color">
+                  {{ child.label | titlecase }}
+                </div>
+                <div class="table-cell p-2">{{ child.value }}</div>
+              </div>
+            </mat-expansion-panel>
+          </ng-container>
+
+          <ng-template #singleValue>
+            <div class="text-lg primary-color font-semibold">
+              {{ data.label | titlecase }}
             </div>
-            <div class="table-cell p-2">{{ child.value }}</div>
-          </div>
-        </mat-expansion-panel>
-      </td>
-    </tr>
+            <div>{{ data.value }}</div>
+          </ng-template>
+        </ng-container>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
 
-    <ng-template #singleValue>
-      <tr>
-        <td class="p-2 text-lg text-purple-800 font-semibold">
-          {{ data.label | titlecase }}
-        </td>
-        <td class="p-2">{{ data.value }}</td>
-      </tr>
-    </ng-template>
-  </ng-container>
-</table>
+<div class="text-right">
+  <button mat-raised-button color="accent" class="mt-2">Back</button>
+</div>

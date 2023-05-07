@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Fruit } from '@app/core/models';
 import { FruitSelectors, FruitsActions } from '@app/core/state/fruits';
 import { FruitFilter } from '@app/core/state/fruits/models/fruit-filter.interface';
@@ -20,7 +21,7 @@ export class TableComponent {
 
   private savedFilter: FruitFilter | undefined;
 
-  constructor(private readonly store: Store) {
+  constructor(private readonly store: Store, private readonly router: Router) {
     this.model$ = this.store
       .select(FruitSelectors.selectFruitsPageViewModel)
       .pipe(
@@ -43,5 +44,9 @@ export class TableComponent {
         },
       })
     );
+  }
+
+  public goToDetail(element: Fruit) {
+    this.router.navigate([`/fruit/${element.name}`]);
   }
 }

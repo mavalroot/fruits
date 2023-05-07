@@ -16,8 +16,8 @@
 
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let _element">
-        <mat-icon color="primary">visibility</mat-icon>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon color="primary" class="cursor-pointer" (click)="goToDetail(element)">visibility</mat-icon>
       </td>
     </ng-container>
 

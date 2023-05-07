@@ -20,6 +20,7 @@ export const fruitFeature = createFeature({
     on(FruitActions.getDetail, (state) => ({
       ...state,
       error: undefined,
+      data: undefined
     })),
     on(FruitActions.getDetailSuccess, (state, { data }) => ({
       ...state,

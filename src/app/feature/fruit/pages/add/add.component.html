@@ -7,7 +7,7 @@
   </mat-card-content>
 </mat-card>
 
-<form [formGroup]="form" (ngSubmit)="onSubmit(model)">
+<form [formGroup]="form" (ngSubmit)="addFruit(model)">
   <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
 
   <div class="flex flex-wrap justify-between mt-2">

@@ -16,3 +16,20 @@ export const getDetailFailure = createAction(
   '[Fruit] Get detail failure',
   props<{ error: FruitError }>()
 );
+
+export const addFruit = createAction(
+  '[Fruit] Add fruit',
+  props<{ data: FruitDetail }>()
+);
+
+export const addFruitSuccess = createAction(
+  '[Fruit] Add fruit success',
+  props<{ message: string }>()
+
+);
+
+export const addFruitFailure = createAction(
+  '[Fruit] Add fruit failure',
+  props<{ message: string }>()
+
+);

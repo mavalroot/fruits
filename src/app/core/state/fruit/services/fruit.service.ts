@@ -12,4 +12,8 @@ export class FruitService {
   public getDetail(name: string): Observable<FruitDetail> {
     return this.httpClient.get<FruitDetail>(`/api/fruit/${name.toLowerCase()}`);
   }
+
+  public addFruit(data: FruitDetail): Observable<{ success: string }> {
+    return this.httpClient.put<{ success: string }>('/api/fruit', data);
+  }
 }

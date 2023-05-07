@@ -29,6 +29,15 @@ export const fruitFeature = createFeature({
     on(FruitActions.getDetailFailure, (state, { error }) => ({
       ...state,
       error,
-    }))
+    })),
+    on(FruitActions.addFruit, (state) => ({
+      ...state,
+    })),
+       on(FruitActions.addFruitSuccess, (state) => ({
+      ...state,
+    })),
+       on(FruitActions.addFruitFailure, (state) => ({
+      ...state,
+    })),
   ),
 });

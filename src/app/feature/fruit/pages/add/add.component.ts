@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Fruit } from '@app/core/models';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { formlyFields } from './form-config';
+import { Store } from '@ngrx/store';
+import { FruitActions } from '@app/core/state/fruit';
+import { FruitDetail } from '@app/core/models';
 
 @Component({
   selector: 'app-add',
@@ -13,7 +15,9 @@ export class AddComponent {
   model = {};
   fields: FormlyFieldConfig[] = formlyFields;
 
-  onSubmit(model: unknown) {
-    console.log(model);
+  constructor(private readonly store: Store) {}
+
+  addFruit(model: unknown) {
+    this.store.dispatch(FruitActions.addFruit({ data: model as FruitDetail }));
   }
 }

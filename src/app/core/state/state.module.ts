@@ -5,6 +5,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from '../core.state';
 import { FruitsModule } from './fruits';
+import { FruitModule } from './fruit';
 
 @NgModule({
   declarations: [],
@@ -22,6 +23,7 @@ import { FruitsModule } from './fruits';
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     FruitsModule,
+    FruitModule,
   ],
 })
 export class StateModule {}

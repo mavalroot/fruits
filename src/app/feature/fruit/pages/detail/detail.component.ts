@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Fruit } from '@app/core/models';
 import { FruitActions, FruitSelectors } from '@app/core/state/fruit';
+import { FruitError } from '@app/core/state/fruit/models/fruit-error.interface';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -12,7 +13,10 @@ import { Observable } from 'rxjs';
 export class DetailComponent {
   public model$: Observable<{
     detail: Fruit | undefined;
+    error: FruitError | undefined;
   }>;
+
+  public fruitName: string = '';
 
   constructor(
     private readonly store: Store,
@@ -22,8 +26,8 @@ export class DetailComponent {
   }
 
   ngOnInit() {
-    const fruitName = this.route.snapshot.params['fruit'];
+    this.fruitName = this.route.snapshot.params['fruit'];
 
-    this.store.dispatch(FruitActions.getDetail({ name: fruitName }));
+    this.store.dispatch(FruitActions.getDetail({ name: this.fruitName }));
   }
 }

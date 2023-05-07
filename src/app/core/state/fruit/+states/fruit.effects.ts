@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { FruitService } from '../services/fruit.service';
 import { FruitActions } from '..';
-import { mergeMap, map } from 'rxjs';
+import { mergeMap, map, catchError, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +20,9 @@ export class FruitEffects {
         this.fruitService
           .getDetail(name)
           .pipe(map((data) => FruitActions.getDetailSuccess({ data })))
+      ),
+      catchError((error) =>
+        of(FruitActions.getDetailFailure({ error: error.error }))
       )
     )
   );

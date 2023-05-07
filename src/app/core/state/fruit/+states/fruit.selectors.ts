@@ -8,7 +8,13 @@ export const selectDetail = createSelector(
   ({ data }) => data
 );
 
+export const selectError = createSelector(
+  selectFruitState,
+  ({ error }) => error
+);
+
 export const selectFruitPageViewModel = createSelector(
   selectDetail,
-  (detail) => ({ detail })
+  selectError,
+  (detail, error) => ({ detail, error })
 );

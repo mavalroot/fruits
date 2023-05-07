@@ -1,5 +1,11 @@
 <ng-container *ngIf="model$ | async as model">
-  <div *ngIf="model.detail as detail">
-    {{ detail.name }}
-  </div>
+  <app-fruit-detail
+    *ngIf="model.detail"
+    [detail]="model.detail"
+  ></app-fruit-detail>
+
+  <app-fruit-not-found
+    *ngIf="model.error"
+    [fruitName]="fruitName"
+  ></app-fruit-not-found>
 </ng-container>

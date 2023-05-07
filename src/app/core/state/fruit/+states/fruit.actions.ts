@@ -1,5 +1,6 @@
 import { FruitDetail } from '@app/core/models/fruit-detail.interface';
 import { createAction, props } from '@ngrx/store';
+import { FruitError } from '../models/fruit-error.interface';
 
 export const getDetail = createAction(
   '[Fruit] Get detail',
@@ -11,4 +12,7 @@ export const getDetailSuccess = createAction(
   props<{ data: FruitDetail }>()
 );
 
-export const getDetailFailure = createAction('[Fruit] Get detail failure');
+export const getDetailFailure = createAction(
+  '[Fruit] Get detail failure',
+  props<{ error: FruitError }>()
+);

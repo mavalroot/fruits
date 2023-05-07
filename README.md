@@ -15,6 +15,7 @@ Fruits is created with:
 - NgRx (15.4.0)
 - Tailwind (3.3.2)
 - Jest (29.5.0)
+- Formly (6.0.0)
 - [Fruityvice API](https://fruityvice.com/)
 
 ## Setup

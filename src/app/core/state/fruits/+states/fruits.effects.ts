@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { FruitsService } from '../service/fruits.service';
+import { FruitsService } from '../services/fruits.service';
 import * as FruitsActions from './fruits.actions';
 import { map, switchMap } from 'rxjs';
 

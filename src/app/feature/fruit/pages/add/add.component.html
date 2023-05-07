@@ -1,1 +1,23 @@
-<p>add works!</p>
+<h1 class="h1-title">Add a fruit</h1>
+
+<mat-card class="mb-6">
+  <mat-card-content>
+    <mat-icon color="primary">info</mat-icon> Be aware that this is a public
+    api. Your fruit submission may or may not be accepted.
+  </mat-card-content>
+</mat-card>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit(model)">
+  <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+
+  <div class="flex flex-wrap justify-between mt-2">
+    <a mat-raised-button color="accent" routerLink="/">
+      <mat-icon>arrow_back</mat-icon>
+      Back
+    </a>
+    <button mat-raised-button color="primary" type="submit">
+      <mat-icon>add</mat-icon>
+      Add
+    </button>
+  </div>
+</form>

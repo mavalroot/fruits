@@ -4,6 +4,9 @@ import { StateModule } from './state/state.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoadingInterceptor } from './interceptor/loading.interceptor';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { FormlyModule } from '@ngx-formly/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyMaterialModule } from '@ngx-formly/material';
 
 
 const EXPORT_IMPORT = [
@@ -15,6 +18,9 @@ const EXPORT_IMPORT = [
     HttpClientModule,
     StateModule,
     MatDialogModule,
+    FormlyModule.forRoot(),
+    ReactiveFormsModule,
+    FormlyMaterialModule,
     ...EXPORT_IMPORT
   ],
   providers: [

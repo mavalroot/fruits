@@ -27,3 +27,7 @@ body {
 .primary-background {
   background-color: #673ab7;
 }
+
+.h1-title {
+  @apply mb-2 mt-0 text-4xl font-extrabold primary-color text-center;
+}

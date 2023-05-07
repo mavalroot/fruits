@@ -10,14 +10,20 @@
 <form [formGroup]="form" (ngSubmit)="addFruit(model)">
   <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
 
-  <div class="flex flex-wrap justify-between mt-2">
+  <div class="flex flex-wrap justify-between mt-4">
     <a mat-raised-button color="accent" routerLink="/">
       <mat-icon>arrow_back</mat-icon>
       Back
     </a>
-    <button mat-raised-button color="primary" type="submit">
-      <mat-icon>add</mat-icon>
-      Add
-    </button>
+    <div>
+      <button mat-raised-button color="warn" type="reset" class="mr-2">
+        <mat-icon>close</mat-icon>
+        Reset
+      </button>
+      <button mat-raised-button color="primary" type="submit">
+        <mat-icon>add</mat-icon>
+        Add
+      </button>
+    </div>
   </div>
 </form>

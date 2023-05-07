@@ -17,7 +17,13 @@ export class AddComponent {
 
   constructor(private readonly store: Store) {}
 
-  addFruit(model: unknown) {
-    this.store.dispatch(FruitActions.addFruit({ data: model as FruitDetail }));
+  public addFruit(model: unknown) {
+    if (this.form.valid && this.form.dirty) {
+      this.store.dispatch(
+        FruitActions.addFruit({ data: { ...(model as FruitDetail) } })
+      );
+    } else {
+      this.form.markAllAsTouched();
+    }
   }
 }

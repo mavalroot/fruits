@@ -8,25 +8,26 @@ import { FormlyModule } from '@ngx-formly/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyMaterialModule } from '@ngx-formly/material';
 
-
-const EXPORT_IMPORT = [
-  NavbarComponent
-];
+const EXPORT_IMPORT = [NavbarComponent];
 @NgModule({
   declarations: [],
   imports: [
     HttpClientModule,
     StateModule,
     MatDialogModule,
-    FormlyModule.forRoot(),
+    FormlyModule.forRoot({
+      validationMessages: [
+        { name: 'required', message: 'This field is required' },
+      ],
+    }),
     ReactiveFormsModule,
     FormlyMaterialModule,
-    ...EXPORT_IMPORT
+    ...EXPORT_IMPORT,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
     MatDialog,
   ],
-  exports: [...EXPORT_IMPORT]
+  exports: [...EXPORT_IMPORT],
 })
-export class CoreModule { }
+export class CoreModule {}

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Fruit } from '@app/core/models';
-import { FruitSelectors, FruitsActions } from '@app/core/state/fruits';
+import { FruitsSelectors, FruitsActions } from '@app/core/state/fruits';
 import { FruitFilter } from '@app/core/state/fruits/models/fruit-filter.interface';
 import { FruitPagination } from '@app/core/state/fruits/models/fruit-pagination.interface';
 import { Store } from '@ngrx/store';
@@ -23,7 +23,7 @@ export class TableComponent {
 
   constructor(private readonly store: Store, private readonly router: Router) {
     this.model$ = this.store
-      .select(FruitSelectors.selectFruitsPageViewModel)
+      .select(FruitsSelectors.selectFruitsPageViewModel)
       .pipe(
         tap(({ filter }) => {
           this.savedFilter = filter;

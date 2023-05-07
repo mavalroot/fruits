@@ -1,5 +1,5 @@
 import * as FruitsActions from './+states/fruits.actions';
-import * as FruitSelectors from './+states/fruits.selectors';
+import * as FruitsSelectors from './+states/fruits.selectors';
 
-export { FruitsActions, FruitSelectors };
+export { FruitsActions, FruitsSelectors };
 export * from './fruits.module';

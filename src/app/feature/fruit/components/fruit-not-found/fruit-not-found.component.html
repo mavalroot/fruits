@@ -1,4 +1,4 @@
-<div class="border-2 border-red-700 p-4 max-w-xl m-auto">
+<div class="border-4 border-red-700 p-4 max-w-xl m-auto shadow-md">
   <h1 class="mb-2 mt-0 text-5xl font-medium leading-tight text-center">
     Fruit not found
   </h1>
@@ -6,16 +6,15 @@
   <img
     src="https://cdn.pixabay.com/photo/2021/07/21/12/49/error-6482984_1280.png"
     alt="404 fruit not found"
-    width="300"
-    class="block m-auto"
+    class="block m-auto w-80 max-w-full"
   />
 
   <div>
     The fruit <strong>{{ fruitName }}</strong> is not listed. If you want to add
-    <strong>{{ fruitName }}</strong> click the Add fruit button below.
+    <strong>{{ fruitName }}</strong> click the <span class="text-purple-800 font-bold">Add fruit</span> button below.
   </div>
 
-  <div class="flex justify-between mt-2">
+  <div class="flex justify-between mt-2 flex-wrap">
     <button mat-raised-button color="accent" (click)="goBack()">Back</button>
     <button mat-raised-button color="primary" (click)="goToAddFruit()">Add fruit</button>
   </div>

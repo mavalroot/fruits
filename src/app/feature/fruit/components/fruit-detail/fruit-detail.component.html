@@ -1,1 +1,16 @@
 <h1>{{ detail?.name }}</h1>
+
+<div>
+  <ng-container *ngFor="let data of mainData">
+    <div>
+      {{ data.label }}
+    </div>
+    <div *ngIf="data.value">{{ data.value }}</div>
+    <div *ngIf="data.children as children">
+      <div *ngFor="let child of children">
+        <div>{{ child.label }}</div>
+        <div>{{ child.value }}</div>
+      </div>
+    </div>
+  </ng-container>
+</div>

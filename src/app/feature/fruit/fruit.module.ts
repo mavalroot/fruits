@@ -14,7 +14,7 @@ import { FruitDetailComponent } from './components/fruit-detail/fruit-detail.com
     AddComponent,
     DetailComponent,
     FruitNotFoundComponent,
-    FruitDetailComponent
+    FruitDetailComponent,
   ],
   imports: [
     CommonModule,
